@@ -173,3 +173,15 @@ key_moments:
 type: strength
 feedback: “Clearly states the issue without blame.”
 
+
+## User Feedback (Mon Mar  9 03:48:08 PM EDT 2026)
+Use the existing OpenAI function in the template or OpenAI api in general. 
+
+Do we need a backend, can it the dashboard page be populated on the fly from the json?
+
+We would like the most visually interesting charts and graphs?
+
+## User Feedback (Mon Mar  9 04:04:33 PM EDT 2026)
+Let’s use gpt-4.1-mini for now. 
+
+Let’s put a super basic password in front of the demo so people don’t waste my api tokens
