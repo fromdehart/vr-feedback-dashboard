@@ -36,6 +36,7 @@ export const generateText = action({
     previousResponseId: v.optional(v.string()),
     reasoning: v.optional(v.union(v.literal("low"), v.literal("medium"), v.literal("high"))),
     temperature: v.optional(v.number()),
+    jsonMode: v.optional(v.boolean()),
   },
   handler: async (_ctx, args) => {
     const apiKey = getApiKey();
@@ -79,6 +80,9 @@ export const generateText = action({
     }
     if (isReasoning && args.reasoning) {
       body.reasoning = { effort: args.reasoning };
+    }
+    if (args.jsonMode && !isReasoning) {
+      body.text = { format: { type: "json_object" } };
     }
 
     try {

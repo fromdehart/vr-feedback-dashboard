@@ -8,6 +8,7 @@ export type GenerateTextOptions = {
   previousResponseId?: string;
   reasoning?: "low" | "medium" | "high";
   temperature?: number;
+  jsonMode?: boolean;
 };
 
 export type GenerateTextResult = { text: string; responseId: string };
@@ -20,6 +21,7 @@ export async function generateText(options: GenerateTextOptions): Promise<Genera
     previousResponseId: options.previousResponseId,
     reasoning: options.reasoning,
     temperature: options.temperature,
+    jsonMode: options.jsonMode,
   });
   return { text: result.text ?? "", responseId: result.responseId ?? "" };
 }
